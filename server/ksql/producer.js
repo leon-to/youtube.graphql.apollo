@@ -104,7 +104,7 @@ async function produceExample() {
   //   producer.produce(config.topic, -1, value, key);
   // }
 
-  let db = JSON.parse(fs.readFileSync('./samples/videos.json'));
+  let db = JSON.parse(fs.readFileSync('ksql/samples/videos.json'));
 
   for(let i in db){
     console.log(db[i])

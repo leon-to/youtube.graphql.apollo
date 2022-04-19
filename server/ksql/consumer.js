@@ -56,12 +56,13 @@ async function consumerExample() {
   console.log(`Consuming records from ${config.topic}`);
 
   let db = []
+  fs.writeFileSync('db/videos.json', JSON.stringify(db, null, 2));
 
   const consumer = await createConsumer(config, ({key, value, partition, offset}) => {
     let data = JSON.parse(value.toString());
     console.log(data)
     db.push(data)
-    fs.writeFileSync('../db/videos.json', JSON.stringify(db, null, 2));
+    fs.writeFileSync('db/videos.json', JSON.stringify(db, null, 2));
   });
 
   consumer.subscribe([config.topic]);
