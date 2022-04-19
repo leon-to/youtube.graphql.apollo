@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "graphql": "node graphql/index.js",
-    "consume-videos": "node ksql/consumer.js -f ~/.confluent/nodejs.config -t videos",
-    "produce-videos": "node ksql/producer.js  -f ~/.confluent/nodejs.config -t videos"
+    "consume": "node ksql/consumer.js -f ~/.confluent/nodejs.config -t videos",
+    "produce": "node ksql/producer.js  -f ~/.confluent/nodejs.config -t videos"
   },
   "dependencies": {
     "apollo-server": "^3.6.7",

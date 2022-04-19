@@ -32,9 +32,11 @@ function createConsumer(config, onData) {
     'sasl.password': config['sasl.password'],
     'security.protocol': config['security.protocol'],
     'sasl.mechanisms': config['sasl.mechanisms'],
-    'group.id': v4()
+    // 'group.id': v4()
+    'group.id': 'leon'
   }, {
-    'auto.offset.reset': 'earliest'
+    // 'auto.offset.reset': 'earliest'
+    'auto.offset.reset': 'latest'
   });
 
   return new Promise((resolve, reject) => {

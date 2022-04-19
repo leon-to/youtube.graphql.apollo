@@ -109,12 +109,18 @@ async function produceExample() {
   for(let i in db){
     console.log(db[i])
     
+    await sleep(2000);
+
     producer.produce(config.topic, -1, Buffer.from(JSON.stringify(db[i])), db[i].id)
   }
 
   producer.flush(10000, () => {
     producer.disconnect();
   });
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 produceExample()
