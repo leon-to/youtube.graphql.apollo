@@ -5,17 +5,15 @@
   "author": "Leon To",
   "license": "MIT",
   "scripts": {
-    "graphql": "node index.js",
     "produce": "node producer.js -f ~/.confluent/nodejs.config -t test1",
     "consume": "node consumer.js -f ~/.confluent/nodejs.config -t test1",
-    "consume-users": "node consumer.js -f ~/.confluent/nodejs.config -t users",
+    "cu": "node consumer.js -f ~/.confluent/nodejs.config -t users",
     "consume-videos": "node consumer.js -f ~/.confluent/nodejs.config -t videos",
     "produce-videos": "node producer.js  -f ~/.confluent/nodejs.config -t videos"
   },
   "dependencies": {
-    "apollo-server": "^3.6.7",
-    "graphql": "^16.3.0",
-    "minimist": "^1.2.3",
-    "node-rdkafka": "^2.5.1"
+    "minimist": "latest",
+    "node-rdkafka": "latest",
+    "uuid": "^8.3.2"
   }
 }
